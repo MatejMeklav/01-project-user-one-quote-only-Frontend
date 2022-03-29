@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
-export default class Signup extends Component {
+
+export default class Home extends Component {
   render() {
     return (
         <>
             <Navbar></Navbar>
-            <div>Signup</div>
         </>
-        
+      
     )
   }
 }
