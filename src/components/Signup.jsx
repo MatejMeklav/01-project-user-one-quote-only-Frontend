@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
-import { url } from "../globalVariables";
+import { url } from '../globalVariables';
 import axios from 'axios';
+import './components.css';
 export default class Signup extends Component {
   constructor(props) {
     super(props);
@@ -26,81 +27,98 @@ export default class Signup extends Component {
   handleSubmit(event) {
     const { email, firstName, lastName, password, repeatedPassword } =
       this.state;
-      axios.post(url+'signup', {
+    axios
+      .post(url + 'signup', {
         firstName: firstName,
         lastName: lastName,
         email: email,
         password: password,
         repeatedPassword: repeatedPassword,
       })
-      .then((response) => {
+      .then(
+        (response) => {
           console.log(response);
-      }, (error) => {
-        console.log(error);
-      });
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
     event.preventDefault();
-    
   }
   render() {
     return (
       <>
         <Navbar></Navbar>
-        <h1>Welcome back!</h1>
+        <nav className="form-container-two">
+        <h1>What is your name?</h1>
         <p>
-          Thank you for comming back. Hope you have a good day and inspire
-          others.
+          Your name will appear on quotes and your public profle.
         </p>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Email
+        <nav>
+          <img src="profile_picture.png" alt="profile logo"></img>
+        </nav>
+        <form className='form-container-sign-up' onSubmit={this.handleSubmit}>
+          <label className="form-label">Email</label>
             <input
+              className="sign-up-form-input"
               type="text"
               name="email"
               value={this.state.email}
               onChange={this.handleChange}
             />
-          </label>
-          <label>
-            First Name
+          <nav className='name-container'>
+            <nav  className="form-label">
+            <label>First Name </label>
             <input
+              className="sign-up-form-input"
               type="text"
               name="firstName"
               value={this.state.firstName}
               onChange={this.handleChange}
             />
-          </label>
-          <label>
-            Last Name
+            </nav>
+            <nav  className="form-label">
+            <label>Last Name</label>
             <input
+              className="sign-up-form-input"
               type="text"
               name="lastName"
               value={this.state.lastName}
               onChange={this.handleChange}
             />
-          </label>
-          <label>
-            Password
+            </nav>
+        </nav>
+          <label className="form-label">Password</label>
             <input
+              className="sign-up-form-input"
               type="password"
               name="password"
               value={this.state.password}
               onChange={this.handleChange}
             />
-          </label>
-          <label>
-            Confirm password
+          
+          <label className="form-label"> Confirm password</label>
+            
             <input
+              className="sign-up-form-input"
               type="password"
               name="repeatedPassword"
               value={this.state.repeatedPassword}
               onChange={this.handleChange}
             />
-          </label>
-          <button>Sign up</button>
+          
+          <button className="sign-up-form-btn">Sign up</button>
+          <nav className='lower-part'>
+           <p>Already have an account?</p>
+           <button>Sign in</button>
+          </nav>
         </form>
-        <nav>
-          <img src="footer.png" alt="footer"/>
         </nav>
+        <footer>
+          <img src="footer.png" alt="footer" />
+        </footer>
+        
+        
       </>
     );
   }

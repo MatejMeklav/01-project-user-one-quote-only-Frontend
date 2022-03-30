@@ -9,11 +9,12 @@ export default class Navbar extends Component {
       if (window.location.pathname === '/login') {
         
         return (
-            <div>
+            <div className='navbar'>
+              <img src="quotastic_logo.png" alt="footer"/>
                 <ul>
             <li>
              <Link to="/signup">
-                <button type="button">Sign up</button>
+                <button type="button" className='sign-up-btn'>Sign up</button>
              </Link>
             </li>
           </ul>
@@ -21,11 +22,12 @@ export default class Navbar extends Component {
           )
       }else if(window.location.pathname === '/signup'){
         return (
-            <div>
+            <div className='navbar'>
+              <img src="quotastic_logo.png" alt="footer"/>
             <ul>
                 <li>
                     <Link to="/login">
-                        <button type="button">Login</button>
+                        <button className='login-btn' type="button">Login</button>
                     </Link>
                 </li>
             </ul>
@@ -34,13 +36,18 @@ export default class Navbar extends Component {
         
       }else if('/home') {
           return(
-            <div>
+            <div className='navbar'>
+              <img src="quotastic_logo.png" alt="footer"/>
             <ul>
                 <li>
-                    <Link to="/signup">Sign up</Link>
+                    <Link to="/signup">
+                      <button type="button">Sign up</button>
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/login">Login</Link>
+                    <Link to="/login">
+                      <button type="button">Login</button>
+                    </Link>
                 </li>
             </ul>
         </div>
