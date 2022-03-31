@@ -19,6 +19,21 @@ export default class Login extends Component {
 
   handleSubmit(event) {
     const { email, password } = this.state;
+    axios
+      .post(url + 'login', {
+
+        email: email,
+        password: password,
+      })
+      .then(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
+    event.preventDefault();
     event.preventDefault();
     alert(`
       ____Your Details____\n

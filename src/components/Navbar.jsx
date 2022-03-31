@@ -41,12 +41,12 @@ export default class Navbar extends Component {
             <ul>
                 <li>
                     <Link to="/signup">
-                      <button type="button">Sign up</button>
+                      <button type="button" className='sign-up-btn'>Sign up</button>
                     </Link>
                 </li>
                 <li>
                     <Link to="/login">
-                      <button type="button">Login</button>
+                      <button type="button" className='login-btn'>Login</button>
                     </Link>
                 </li>
             </ul>

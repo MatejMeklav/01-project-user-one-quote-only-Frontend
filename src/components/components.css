@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 
+/* Basic settings  */
+
 footer {
   position: fixed;
   bottom: 0;
@@ -28,6 +30,8 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Login/Register page and navbar */
 
 h1 {
   font-size: 35px;
@@ -92,17 +96,21 @@ footer img {
 
 .sign-up-btn {
   color: white;
-  border: none;
+  border: 2px solid #de8667;
   border-radius: 32px;
-  padding-left: 15px;
-  padding-right: 15px;
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
   font-family: 'Raleway', sans-serif;
   line-height: 19px;
-  background-image: linear-gradient(to right, #de8667, #efb467);
+  background: linear-gradient(to right, #de8667, #efb467);
   padding: 8px 33px 8px 33px;
+}
+
+.sign-up-btn:hover {
+  background: #ffffff;
+  color: #de8667;
+  border: 2px solid #de8667;
 }
 .login-form-btn {
   padding: 8px 16px;
@@ -112,6 +120,11 @@ footer img {
   border-radius: 32px;
   margin: 16px 0px;
   color: #de8667;
+}
+
+.login-form-btn:hover {
+  background-color: #de8667;
+  color: #ffffff;
 }
 .login-form-input,
 .sign-up-form-input {
@@ -130,27 +143,30 @@ footer img {
 
 ul li {
   list-style: none;
+  margin-left: 10px;
 }
 ul {
   padding-top: 15px;
+  padding-left: 20px;
+  display: flex;
 }
 
 .login-btn {
   border: 2px solid #de8667;
   border-radius: 32px;
-  padding-left: 15px;
-  padding-right: 15px;
   font-size: 16px;
+  line-height: 19px;
   font-weight: 400;
   font-style: normal;
   font-family: 'Raleway', sans-serif;
-  line-height: 19px;
+  padding: 8px 36px 8px 36px;
+  color: #de8667;
   background-color: #ffffff;
-  padding: 8px 33px 8px 33px;
-  background: linear-gradient(257.39deg, #efb467 0%, #de8667 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+}
+
+.login-btn:hover {
+  background: #de8667;
+  color: #ffffff;
 }
 
 .sign-up-form-btn {
@@ -162,6 +178,11 @@ ul {
   color: #ffffff;
   font-family: 'Raleway', sans-serif;
   margin: 16px 0px;
+}
+
+.sign-up-form-btn:hover {
+  background: #ffffff;
+  color: #efb467;
 }
 
 .form-container-two {
@@ -200,4 +221,109 @@ ul {
   background-color: #ffffff;
   border: none;
   color: #efb467;
+}
+
+/* Home page */
+
+.upper-container-home {
+  display: flex;
+  margin-top: 5%;
+  max-width: 100%;
+  justify-content: space-between;
+  min-height: 350px;
+}
+
+.upper-container-home .image-container {
+  position: relative;
+  max-width: 450px;
+  margin-right: 12%;
+}
+
+#image-top {
+  position: relative;
+}
+#image-mid {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+}
+#image-bottom {
+  position: static;
+  margin-top: 75px;
+}
+
+.welcome-text-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 540px;
+  margin-left: 12%;
+  align-items: flex-start;
+}
+
+.welcome-text-container h1 {
+  font-weight: 300;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  line-height: 98px;
+  font-size: 90px;
+  text-align: left;
+}
+
+.welcome-text-container h5 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  max-width: 520px;
+  text-align: left;
+  line-height: 28px;
+  margin-bottom: 6%;
+}
+
+.welcome-text-container button {
+  max-width: 27%;
+}
+
+#fantastic-quotes-text {
+  max-width: 45%;
+  margin: 10% auto 6% auto;
+}
+
+#fantastic-quotes-text h2 {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 61px;
+  line-height: 72px;
+  text-align: center;
+}
+
+#most-upvoted-quotes-headline h4 {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 41px;
+  color: #de8667;
+}
+
+#most-upvoted-quotes-text {
+  max-width: 36%;
+  margin: 10px auto;
+}
+#most-upvoted-quotes-text p {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+#bottom-nav {
+  margin-top: 3%;
+  margin-bottom: 12%;
+}
+
+a {
+  text-decoration: none;
 }
