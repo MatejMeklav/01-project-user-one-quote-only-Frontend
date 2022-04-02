@@ -11,7 +11,9 @@ footer {
 .App {
   height: 100%;
   width: 100%;
+  
 }
+
 
 #root {
   min-height: 100vh;
@@ -225,9 +227,16 @@ ul {
 
 /* Home page */
 
+.home-background {
+    height: 180%;
+    width: 100%;
+    background: url("/public/home_top_right.png") right top no-repeat, url("/public/home_bottom_right.png") right bottom no-repeat ;
+
+}
+
 .upper-container-home {
   display: flex;
-  margin-top: 5%;
+  margin-top: 14%;
   max-width: 100%;
   justify-content: space-between;
   min-height: 350px;
@@ -326,4 +335,63 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+/* Quotes layout */
+
+.quotes-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  max-width: 80%;
+  margin: auto;
+}
+
+.quotes-list li {
+  list-style: none;
+  flex: 0 0 33.333333%;
+  display:flex;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  min-width: 30%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+}
+
+.quotes-list li .quote-container-right {
+
+  max-width: 78%;
+}
+
+.quotes-list li .quote-container-left {
+  max-width: 25%;
+  margin-right: 6%;
+  margin-left: 5%;
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
+.quotes-list li .quote-container-right p {
+  margin-top: 3%;
+  word-wrap: break-word;
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: left;
+}
+
+.quote-container-right .user-display {
+  display: flex;
+  margin-top: 8%;
+}
+.quote-container-right .user-display img {
+  width: 35px;
+  height: 35px;
+}
+
+.quote-container-left .vote-btn {
+  background-color: #ffffff;
+  border: none;
 }

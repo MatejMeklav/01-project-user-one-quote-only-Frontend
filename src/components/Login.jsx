@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import './components.css';
+import axios from 'axios';
+import { url } from '../globalVariables';
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '' };
+    this.state = { email: '', password: '', status : 0, redirect: false };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
@@ -25,23 +28,25 @@ export default class Login extends Component {
         email: email,
         password: password,
       })
-      .then(
-        (response) => {
-          console.log(response);
-        },
-        (error) => {
-          console.log(error);
-        },
-      );
+      .then(response => { 
+        this.setState({status:response.status});
+        localStorage.setItem("key", response.data.key)
+      })
+      .catch(error => {
+          console.log(error.response)
+          this.setState({status:error.response.status})
+      });
     event.preventDefault();
-    event.preventDefault();
-    alert(`
-      ____Your Details____\n
-      Email : ${email}
-      pass : ${password}
-    `);
   }
   render() {
+    var msg = "";
+    if(this.state.status === 401){
+        msg = "Email or password is invalid!";
+    }else if(this.state.status === 201) {
+      return (
+        <p>Sucess!</p>
+      )
+    }
     return (
       <nav className="content">
         <Navbar></Navbar>
@@ -52,7 +57,9 @@ export default class Login extends Component {
               Thank you for comming back. Hope you have a good day and inspire
               others.
             </p>
+            <p>{msg}</p>
           </nav>
+          
           <form className="form-container-login" onSubmit={this.handleSubmit}>
             <label className="form-label">Email</label>
             <input

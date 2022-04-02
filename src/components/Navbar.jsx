@@ -2,13 +2,36 @@ import React, { Component } from 'react'
 import {
     Link
   } from 'react-router-dom';
-
+import jwtDecode from 'jwt-decode';
 export default class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {login: false};
+  }
+
+  componentDidMount() {
+    const key = localStorage.getItem('key');
+    
+        if(key){
+            var dateNow = new Date();
+            const decoded = jwtDecode(key);
+            console.log(decoded);
+            if(decoded.exp * 1000 < dateNow.getTime()){
+                this.setState({login: false})
+                console.log("falsenavbar");
+            }else {
+                this.setState({login: true})
+                console.log("truenavbar");
+            }
+        }
+    
+  }
+
   render() {
-    console.log(window.location.pathname)
-      if (window.location.pathname === '/login') {
-        
-        return (
+    if(this.state.login === false){
+      switch(window.location.pathname) {
+        case '/login':
+          return (
             <div className='navbar'>
               <img src="quotastic_logo.png" alt="footer"/>
                 <ul>
@@ -20,8 +43,8 @@ export default class Navbar extends Component {
           </ul>
             </div>
           )
-      }else if(window.location.pathname === '/signup'){
-        return (
+        case '/signup':
+          return (
             <div className='navbar'>
               <img src="quotastic_logo.png" alt="footer"/>
             <ul>
@@ -32,9 +55,8 @@ export default class Navbar extends Component {
                 </li>
             </ul>
             </div>
-        )
-        
-      }else if('/home') {
+         )
+        case '/home':
           return(
             <div className='navbar'>
               <img src="quotastic_logo.png" alt="footer"/>
@@ -52,8 +74,42 @@ export default class Navbar extends Component {
             </ul>
         </div>
           )
-    
+        default:
+          // code block
       }
-    
+
+    }else if (this.state.login == true){
+          return(
+            <div className='navbar'>
+              <img src="quotastic_logo.png" alt="footer"/>
+            <ul>
+                <li>
+                    <Link to="/home">
+                      <button type="button" className='logged-in-navbar-btn'>Home</button>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/settings">
+                      <button type="button" className='logged-in-navbar-btn'>Settings</button>
+                    </Link>
+                </li>
+                <li>
+                      <button type="button" className='logged-in-navbar-btn'>Logout</button>
+                </li>
+                <li>
+                   <Link to="/me">
+                      <button className='profile-btn'><img src="./profile_picture.png" alt="profile image"/></button>
+                   </Link>
+                </li>
+                <li>
+                   <Link to="/create">
+                      <button className='create-btn'><img src="./create_logo.png" alt="create logo"/></button>
+                   </Link>
+                </li>
+            </ul>
+            </div>
+          )
+    }
+      
   }
 }

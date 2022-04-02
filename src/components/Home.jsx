@@ -1,15 +1,40 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
 import './components.css';
+import { url } from '../globalVariables';
 import {
     Link
   } from 'react-router-dom';
-
+import Quotes from './Quotes';
+import jwtDecode from 'jwt-decode';
 export default class Home extends Component {
+    constructor(props){
+        super(props);
+        this.state = {login: false};
+    }
+
+      componentDidMount() {
+        const key = localStorage.getItem('key');
+        
+        if(key){
+          var dateNow = new Date();
+          const decoded = jwtDecode(key);
+          console.log(decoded);
+          if(decoded.exp * 1000 < dateNow.getTime()){
+            this.setState({login: false})
+            console.log("false");
+          }else {
+            this.setState({login: true})
+            console.log("true");
+          }
+    
+        }
+      }
+
   render() {
     return (
-        <>
-            <Navbar></Navbar>
+        <nav className='home-background'>
+            <Navbar login = {this.state.login}></Navbar>
             <nav className='upper-container-home'>
             <nav className='welcome-text-container'>
                <h1>Welcome<br></br> to Quotastic</h1> 
@@ -33,9 +58,7 @@ export default class Home extends Component {
             <nav id='most-upvoted-quotes-text'>
                 <p>Most upvoted quotes on the platform. Sign up or login to like the quotes and keep them saved in your profile</p>                                      
             </nav>  
-            <nav>
-                MOST UPVOTED QUOTES LIST
-            </nav>
+            <Quotes></Quotes>
             <nav id='bottom-nav'>
                 <Link className='login-btn' to='/signup'>Sign up to see more</Link> 
             </nav>
@@ -43,7 +66,7 @@ export default class Home extends Component {
                 <img src="footer.png" alt="footer"/>
             </footer>
                 
-        </>
+        </nav>
       
     )
   }
