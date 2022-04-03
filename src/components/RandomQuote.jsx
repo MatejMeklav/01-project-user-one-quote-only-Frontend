@@ -2,34 +2,19 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { url } from '../globalVariables';
 
-export default class Quotes
+export default class RandomQuote
  extends Component {
-   constructor(props){
-     super(props)
-    this.state = {quotes: []}
+   state = {
+     quotes: []
    }
-    
- componentDidMount() {
-   if(this.props.type === true){
-    axios.get(url + 'list')
-    .then(response => {
-      const quotes = response.data;
-      this.setState({ quotes });
-    })
-    console.log("MOST UPVOTED QUOTES");
-   }else if(this.props.type === false){
 
-    axios.get(url + 'list/Date')
-    .then(response => {
-      const quotes = response.data;
-      this.setState({ quotes });
-    })
-    console.log("MOST RECENT QUOTES");
-
-   }
-    
-
-      
+   componentDidMount() {
+    axios.get(url + 'list/random')
+      .then(response => {
+        const quotes = response.data;
+        console.log(quotes);
+        this.setState({ quotes });
+      })
   }
 
   subtract(upvotes, downvotes){
@@ -39,11 +24,11 @@ export default class Quotes
    
   render() {
     return (
-      <div className='quotes-list-grid'>
+      <div className='random-quote'>
       {
         this.state.quotes
           .map(quote =>
-            <div className='grid-element' key={quote.id}>
+            <div className='quote' key={quote.id}>
               <div className='quote-container-left'>
               <button className='vote-btn'><img src="./arrow_up.png" alt="arrow up" onClick={this.upvote} /></button>
               <p>{this.subtract(quote.upVote, quote.downVote)}</p>

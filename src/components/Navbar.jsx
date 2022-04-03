@@ -80,9 +80,9 @@ export default class Navbar extends Component {
 
     }else if (this.state.login == true){
           return(
-            <div className='navbar'>
+            <div className='navbar-logged-in'>
               <img src="quotastic_logo.png" alt="footer"/>
-            <ul>
+            <ul className='navbar-li-logged-in'>
                 <li>
                     <Link to="/home">
                       <button type="button" className='logged-in-navbar-btn'>Home</button>
@@ -97,12 +97,12 @@ export default class Navbar extends Component {
                       <button type="button" className='logged-in-navbar-btn'>Logout</button>
                 </li>
                 <li>
-                   <Link to="/me">
-                      <button className='profile-btn'><img src="./profile_picture.png" alt="profile image"/></button>
+                   <Link className='link-logged-in'  to="/me">
+                      <img className='profile-img' src="./profile_picture.png" alt="profile image"/>
                    </Link>
                 </li>
                 <li>
-                   <Link to="/create">
+                   <Link className='link-logged-in' to="/create">
                       <button className='create-btn'><img src="./create_logo.png" alt="create logo"/></button>
                    </Link>
                 </li>

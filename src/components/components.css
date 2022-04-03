@@ -1,19 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 
 /* Basic settings  */
-
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   min-height: 7%;
 }
+
 .App {
   height: 100%;
   width: 100%;
   
 }
-
 
 #root {
   min-height: 100vh;
@@ -27,6 +26,7 @@ body {
   min-height: 100vh;
   margin: 0;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -34,8 +34,8 @@ body {
 }
 
 /* Login/Register page and navbar */
-
-h1 {
+ .upper-part h1,
+.form-container-two h1 {
   font-size: 35px;
   font-style: normal;
   font-weight: 500;
@@ -147,6 +147,7 @@ ul li {
   list-style: none;
   margin-left: 10px;
 }
+
 ul {
   padding-top: 15px;
   padding-left: 20px;
@@ -251,11 +252,13 @@ ul {
 #image-top {
   position: relative;
 }
+
 #image-mid {
   position: absolute;
   top: 60px;
   left: 30px;
 }
+
 #image-bottom {
   position: static;
   margin-top: 75px;
@@ -293,7 +296,7 @@ ul {
 }
 
 #fantastic-quotes-text {
-  max-width: 45%;
+  max-width: 46%;
   margin: 10% auto 6% auto;
 }
 
@@ -306,7 +309,7 @@ ul {
   text-align: center;
 }
 
-#most-upvoted-quotes-headline h4 {
+.quotes-headline h4 {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
@@ -315,11 +318,12 @@ ul {
   color: #de8667;
 }
 
-#most-upvoted-quotes-text {
+.quotes-text {
   max-width: 36%;
   margin: 10px auto;
 }
-#most-upvoted-quotes-text p {
+
+.quotes-text p {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
@@ -339,39 +343,38 @@ a {
 
 /* Quotes layout */
 
-.quotes-list {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
+.quotes-list-grid {
   max-width: 80%;
   margin: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
-
-.quotes-list li {
+.grid-element {
   list-style: none;
-  flex: 0 0 33.333333%;
   display:flex;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
-  min-width: 30%;
+  min-width: 31.333333%;
+  max-width: 31.333333%;
   padding-top: 1%;
   padding-bottom: 2%;
-  margin-bottom: 2%;
+  margin-top: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
-.quotes-list li .quote-container-right {
-
+.quote-container-right {
   max-width: 78%;
 }
 
-.quotes-list li .quote-container-left {
+ .quote-container-left {
   max-width: 25%;
   margin-right: 6%;
   margin-left: 5%;
   padding-top: 7%;
   padding-bottom: 7%;
 }
-.quotes-list li .quote-container-right p {
+ .quote-container-right p {
   margin-top: 3%;
   word-wrap: break-word;
   font-family: 'Raleway',sans-serif;
@@ -386,6 +389,7 @@ a {
   display: flex;
   margin-top: 8%;
 }
+
 .quote-container-right .user-display img {
   width: 35px;
   height: 35px;
@@ -394,4 +398,100 @@ a {
 .quote-container-left .vote-btn {
   background-color: #ffffff;
   border: none;
+}
+
+/*home navbar logged in */
+.logged-in-navbar-btn {
+  color:#ffffff;
+  border: none;
+  background: none;
+  font-weight: 400;
+  font-family: 'Raleway',sans-serif;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 10%;
+  margin-top: 10px;
+}
+
+.navbar-li-logged-in li{
+ min-width: 30%;
+ padding-top: 2%;
+ margin-left: 3%;
+}
+.navbar-li-logged-in {
+  margin-right: 15%;
+}
+
+.create-btn{
+  width: 100%;
+  border: none;
+  height: 80%;
+  border-radius: 60px;
+}
+
+.create-btn img {
+  width: 100%;
+  height: 200%;
+}
+
+.profile-img{
+  width: 100%;
+  height: 200%;
+}
+
+.navbar-logged-in {
+  display: flex;
+  margin: 0 auto 0 auto;
+  justify-content: space-between;
+  max-width: 89%;
+  padding-top: 10px;
+}
+
+.navbar-logged-in img {
+  height: 60%;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.headline-paragraph-container {
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+
+.headline-paragraph-container h4 {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 41px;
+  letter-spacing: 0.25px;
+  color: #DE8667;
+}
+
+.headline-paragraph-container #paragraph {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 10px;
+  color: #000000;
+}
+
+.random-quote{
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.random-quote .quote {
+  list-style: none;
+  display:flex;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  min-width: 50%;
+  margin-top: 5%;
+  margin-bottom: 8%;
+  padding-top: 1%;
 }
