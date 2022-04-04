@@ -24,7 +24,7 @@ export default class RandomQuote
    
   render() {
     return (
-      <div className='random-quote'>
+      <div className='random-mine-others-quote'>
       {
         this.state.quotes
           .map(quote =>

@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { url } from '../globalVariables';
+import axios from 'axios';
 
 export default class Settings extends Component {
 
@@ -10,6 +12,7 @@ export default class Settings extends Component {
           lastName: '',
           password: '',
           repeatedPassword: '',
+          status: 0,
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -23,31 +26,44 @@ export default class Settings extends Component {
       }
     
       handleSubmit(event) {
+
+        const headers = { 
+            'Authorization': 'Bearer '+ localStorage.getItem('key')
+        };
         const { email, firstName, lastName, password, repeatedPassword } =
           this.state;
         axios
-          .post(url + '////', {
+          .put(url + 'me/update-user', {
             firstName: firstName,
             lastName: lastName,
             email: email,
             password: password,
             repeatedPassword: repeatedPassword,
-          })
+          }, { headers })
           .then(
             (response) => {
               console.log(response);
+              this.setState({status: response.status});
             },
             (error) => {
               console.log(error);
+              this.setState({status: error.response.status});
             },
           );
         event.preventDefault();
-      }
+    }
   render() {
+    var msg = "";
+    if(this.state.status === 400){
+        msg = "Invalid input data!";
+    }else if(this.state.status === 200) {
+        msg = "Change was successful.";
+    }
     return (
-      <div>
+      <div className='settings-container'>
         <h4>Profile settings</h4>  
         <p>Change your profile settings</p>
+        <p>{msg}</p>
         <form className='form-container-sign-up' onSubmit={this.handleSubmit}>
           <label className="form-label">Email</label>
             <input
@@ -97,9 +113,9 @@ export default class Settings extends Component {
               value={this.state.repeatedPassword}
               onChange={this.handleChange}
             />
-          <nav className='buttons-settings'>
+          <nav className='buttons-submit-cancel'>
             <button className="sign-up-form-btn">Submit</button>
-            <button>Cancel</button> 
+            <button id='cancel'>Cancel</button> 
           </nav>
         </form>
 

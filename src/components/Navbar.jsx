@@ -57,6 +57,7 @@ export default class Navbar extends Component {
             </div>
          )
         case '/home':
+        case '/me':
           return(
             <div className='navbar'>
               <img src="quotastic_logo.png" alt="footer"/>
