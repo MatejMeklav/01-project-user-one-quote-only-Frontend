@@ -7,6 +7,7 @@ import {
 import Quotes from './Quotes';
 import jwtDecode from 'jwt-decode';
 import RandomQuote from './RandomQuote';
+import Footer from './Footer';
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +41,7 @@ export default class Home extends Component {
             <Navbar></Navbar>
             <nav className='upper-container-home'>
               <nav className='welcome-text-container'>
-                <h1>Welcome<br></br> to Quotastic</h1>
+                <h1>Welcome<br></br> to <span className='colored-text'>Quotastic</span></h1>
                 <h5>Quotastic is free online platform for you to explore the  quips, quotes, and proverbs. Sign up and express yourself.</h5>
                 <Link className='sign-up-btn' to="/signup" >Sign up</Link>
 
@@ -53,7 +54,7 @@ export default class Home extends Component {
               </nav>
             </nav>
             <nav id='fantastic-quotes-text'>
-              <h2>Explore the world of fantastic quotes</h2>
+              <h2>Explore the world of <span className='colored-text'>fantastic quotes</span></h2>
             </nav>
             <nav className = 'quotes-headline'>
               <h4>Most upvoted quotes</h4>
@@ -104,9 +105,7 @@ export default class Home extends Component {
               <Link className='login-btn' to='/#'>Load more</Link>
             </nav>
 
-            <footer>
-              <img src="footer.png" alt="footer"/>
-            </footer>
+            <Footer></Footer>
 
           </nav>
         );

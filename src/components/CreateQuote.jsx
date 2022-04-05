@@ -45,7 +45,7 @@ export default class CreateQuote extends Component {
   render() {
     return (
       <div className='create-quote-container'>
-        <h4>Are you felling inspired?</h4>
+        <h4>Are you felling <span className='colored-text'> inspired?</span></h4>
         <p>You can post one quote. You can delete it on your profile or edit in this window.</p>
         <form className='form-container-create' onSubmit={this.handleSubmit}>
           <textarea

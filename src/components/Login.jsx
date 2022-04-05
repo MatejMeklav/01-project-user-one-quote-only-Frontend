@@ -52,7 +52,7 @@ export default class Login extends Component {
         <Navbar></Navbar>
         <nav className="form-container">
           <nav className="upper-part">
-            <h1>Welcome back!</h1>
+            <h1>Welcome <span className='colored-text'>back!</span></h1>
             <p>
               Thank you for comming back. Hope you have a good day and inspire
               others.

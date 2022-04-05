@@ -61,7 +61,7 @@ export default class Settings extends Component {
     }
     return (
       <div className='settings-container'>
-        <h4>Profile settings</h4>  
+        <h4>Profile <span className='colored-text'>settings</span></h4>  
         <p>Change your profile settings</p>
         <p>{msg}</p>
         <form className='form-container-sign-up' onSubmit={this.handleSubmit}>

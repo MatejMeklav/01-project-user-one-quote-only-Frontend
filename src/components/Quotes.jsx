@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { url } from '../globalVariables';
+import {
+  Link
+} from 'react-router-dom';
 export default class Quotes extends Component {
   constructor(props) {
     super(props);
@@ -53,7 +56,9 @@ export default class Quotes extends Component {
               <p>{quote.description}</p>
               <div className="user-display">
                 <img src="profile_picture.png" alt="profile logo"></img>
-                <p>{quote.user.firstName + ' ' + quote.user.lastName}</p>
+                <Link to={{ pathname:'/profile'}}>
+                  <p>{quote.user.firstName + ' ' + quote.user.lastName}</p>
+                </Link>  
               </div>
             </div>
           </div>

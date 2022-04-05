@@ -33,7 +33,7 @@ export default class Navbar extends Component {
         case '/login':
           return (
             <div className='navbar'>
-              <img src="quotastic_logo.png" alt="footer"/>
+              <img id='logo' src="quotastic_logo.png" alt="footer"/>
                 <ul>
             <li>
              <Link to="/signup">
@@ -46,7 +46,7 @@ export default class Navbar extends Component {
         case '/signup':
           return (
             <div className='navbar'>
-              <img src="quotastic_logo.png" alt="footer"/>
+              <img id='logo' src="quotastic_logo.png" alt="footer"/>
             <ul>
                 <li>
                     <Link to="/login">
@@ -58,9 +58,10 @@ export default class Navbar extends Component {
          )
         case '/home':
         case '/me':
+        case '/profile':
           return(
             <div className='navbar'>
-              <img src="quotastic_logo.png" alt="footer"/>
+              <img id='logo' src="quotastic_logo.png" alt="footer"/>
             <ul>
                 <li>
                     <Link to="/signup">
@@ -82,7 +83,7 @@ export default class Navbar extends Component {
     }else if (this.state.login == true){
           return(
             <div className='navbar-logged-in'>
-              <img src="quotastic_logo.png" alt="footer"/>
+              <img id='logo' src="quotastic_logo.png" alt="footer"/>
             <ul className='navbar-li-logged-in'>
                 <li>
                     <Link to="/home">
@@ -98,14 +99,20 @@ export default class Navbar extends Component {
                       <button type="button" className='logged-in-navbar-btn'>Logout</button>
                 </li>
                 <li>
-                   <Link className='link-logged-in'  to="/me">
-                      <img className='profile-img' src="./profile_picture.png" alt="profile image"/>
-                   </Link>
+                  
+                     <Link to="/me">
+                     <button className='logged-in-navbar-btn-img'>
+                        <img className='profile-img' src="./profile_picture.png" alt="profile image"/>
+                     </button>
+                     </Link>
                 </li>
                 <li>
-                   <Link className='link-logged-in' to="/create">
-                      <button className='create-btn'><img src="./create_logo.png" alt="create logo"/></button>
-                   </Link>
+                  
+                    <Link to="/create">
+                    <button className='logged-in-navbar-btn-img'>
+                        <img src="./create_logo.png" alt="create logo"/>
+                    </button>
+                     </Link>
                 </li>
             </ul>
             </div>

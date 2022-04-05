@@ -50,7 +50,7 @@ export default class Signup extends Component {
       <>
         <Navbar></Navbar>
         <nav className="form-container-two">
-        <h1>What is your name?</h1>
+        <h1>What is your <span className='colored-text'>name?</span></h1>
         <p>
           Your name will appear on quotes and your public profle.
         </p>
