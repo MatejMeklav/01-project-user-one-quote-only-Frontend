@@ -79,7 +79,7 @@ export default class Home extends Component {
             <nav className='headline-paragraph-container'>
               <h4>Quote of the day</h4>
               <p id='paragraph'>Quote of the day is randomly choosen quote.</p>
-              <RandomQuote></RandomQuote>
+              <RandomQuote Random = {true}></RandomQuote>
             </nav>
             <nav className = 'quotes-headline'>
               <h4>Most upvoted quotes</h4>

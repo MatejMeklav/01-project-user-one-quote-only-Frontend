@@ -3,6 +3,10 @@ import {
     Link
   } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
+import img from  './images/quotastic_logo.png';
+
+
+
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +37,7 @@ export default class Navbar extends Component {
         case '/login':
           return (
             <div className='navbar'>
-              <img id='logo' src="quotastic_logo.png" alt="footer"/>
+              <img id='logo' src={img} alt="footer"/>
                 <ul>
             <li>
              <Link to="/signup">
@@ -46,7 +50,7 @@ export default class Navbar extends Component {
         case '/signup':
           return (
             <div className='navbar'>
-              <img id='logo' src="quotastic_logo.png" alt="footer"/>
+              <img id='logo' src={img} alt="footer"/>
             <ul>
                 <li>
                     <Link to="/login">
@@ -58,10 +62,9 @@ export default class Navbar extends Component {
          )
         case '/home':
         case '/me':
-        case '/profile':
           return(
             <div className='navbar'>
-              <img id='logo' src="quotastic_logo.png" alt="footer"/>
+              <img id='logo' src={img} alt="footer"/>
             <ul>
                 <li>
                     <Link to="/signup">
@@ -77,13 +80,32 @@ export default class Navbar extends Component {
         </div>
           )
         default:
+          if(window.location.pathname.includes('/profile')){
+            return(
+              <div className='navbar'>
+                <img id='logo' src={img} alt="footer"/>
+              <ul>
+                  <li>
+                      <Link to="/signup">
+                        <button type="button" className='sign-up-btn'>Sign up</button>
+                      </Link>
+                  </li>
+                  <li>
+                      <Link to="/login">
+                        <button type="button" className='login-btn'>Login</button>
+                      </Link>
+                  </li>
+              </ul>
+          </div>
+            )
+          }
           // code block
       }
 
     }else if (this.state.login == true){
           return(
             <div className='navbar-logged-in'>
-              <img id='logo' src="quotastic_logo.png" alt="footer"/>
+              <img id='logo' src={img} alt="logo"/>
             <ul className='navbar-li-logged-in'>
                 <li>
                     <Link to="/home">

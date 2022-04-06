@@ -4,6 +4,9 @@ import { url } from '../globalVariables';
 import {
   Link
 } from 'react-router-dom';
+import arrow_up from  './images/arrow_up.png';
+import arrow_down from  './images/arrow_down.png';
+import profile_logo from  './images/profile_picture.png';
 export default class Quotes extends Component {
   constructor(props) {
     super(props);
@@ -13,8 +16,8 @@ export default class Quotes extends Component {
   componentDidMount() {
     if (this.props.type === true) {
       axios.get(url + 'list').then((response) => {
-        const quotes = response.data;
-        this.setState({ quotes });
+        const quotes = response.data[0];
+        this.setState({ quotes: quotes });
       });
       console.log('MOST UPVOTED QUOTES');
     } else if (this.props.type === false) {
@@ -38,7 +41,7 @@ export default class Quotes extends Component {
             <div className="quote-container-left">
               <button className="vote-btn">
                 <img
-                  src="./arrow_up.png"
+                  src={arrow_up}
                   alt="arrow up"
                   onClick={this.upvote}
                 />
@@ -46,7 +49,7 @@ export default class Quotes extends Component {
               <p>{this.subtract(quote.upVote, quote.downVote)}</p>
               <button className="vote-btn">
                 <img
-                  src="./arrow_down.png"
+                  src={arrow_down}
                   alt="arrow down"
                   onClick={this.downvote}
                 />
@@ -56,7 +59,7 @@ export default class Quotes extends Component {
               <p>{quote.description}</p>
               <div className="user-display">
                 <img src="profile_picture.png" alt="profile logo"></img>
-                <Link to={{ pathname:'/profile'}}>
+                <Link to={'/profile/'+quote.user.id}>
                   <p>{quote.user.firstName + ' ' + quote.user.lastName}</p>
                 </Link>  
               </div>

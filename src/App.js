@@ -10,7 +10,6 @@ import Home from './components/Home';
 import Settings from './components/Settings';
 import CreateQuote from './components/CreateQuote';
 import Profile from './components/Profile';
-import ProfileOthers from './components/ProfileOthers';
 
 function App() {
   return (
@@ -24,7 +23,7 @@ function App() {
                 <Route exact path='/settings' element={< Settings />}></Route>
                 <Route exact path='/create' element={< CreateQuote />}></Route>
                 <Route exact path='/me' element={< Profile />}></Route>
-                <Route exact path='/profile' element={< ProfileOthers />}></Route>
+                <Route exact path='/profile/:id' element={< Profile />}></Route>
           </Routes>
       </div>
     </Router>
