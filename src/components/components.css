@@ -646,11 +646,11 @@ a {
   font-size: 24px;
   line-height: 28px;
   text-align: center;
-  max-width: 80%;
+  max-width: 60%;
 }
 
 .quote-profile h5 {
-  padding-right: 20%;
+  max-width: 60%;
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;

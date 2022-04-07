@@ -16,14 +16,14 @@ export default class Quotes extends Component {
   componentDidMount() {
     if (this.props.type === true) {
       axios.get(url + 'list').then((response) => {
-        const quotes = response.data[0];
+        const quotes = response.data;
         this.setState({ quotes: quotes });
       });
       console.log('MOST UPVOTED QUOTES');
     } else if (this.props.type === false) {
       axios.get(url + 'list/Date').then((response) => {
         const quotes = response.data;
-        this.setState({ quotes });
+        this.setState({ quotes: quotes });
       });
       console.log('MOST RECENT QUOTES');
     }
@@ -58,7 +58,7 @@ export default class Quotes extends Component {
             <div className="quote-container-right">
               <p>{quote.description}</p>
               <div className="user-display">
-                <img src="profile_picture.png" alt="profile logo"></img>
+                <img src={profile_logo} alt="profile logo"></img>
                 <Link to={'/profile/'+quote.user.id}>
                   <p>{quote.user.firstName + ' ' + quote.user.lastName}</p>
                 </Link>  

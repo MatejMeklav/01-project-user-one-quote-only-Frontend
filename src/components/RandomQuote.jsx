@@ -1,40 +1,53 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { url } from '../globalVariables';
 import {
   Link,
+  useParams
 } from 'react-router-dom';
 import arrow_up from  './images/arrow_up.png';
 import arrow_down from  './images/arrow_down.png';
 import profile_logo from  './images/profile_picture.png';
 
-export default class RandomQuote
- extends Component {
-   constructor(props){
-     super(props);
-   }
-   state = {
-      id: "",
-      description: "",
-      upVote: 0,
-      downVote: 0,
-      idUser: "",
-      firstName: "",
-      lastName: "",
-      email: "",     
-   }
+export default function RandomQuote() {
 
-   componentDidMount() {
-     if(this.props.Random === false){
-       console.log(this.props.userId)
-              axios.get(url + 'users/'+this.props.userId)
+   const { id } = useParams();
+   const [firstName, setFirstName] = useState("");
+   const[lastName, setLastName] = useState("");
+   const [description, setDescription] = useState("");
+   const [upVote, setUpVote] = useState(0);
+   const [downVote, setDownVote] = useState(0);
+
+
+   useEffect(() => {
+
+    if(window.location.pathname == '/me'){
+      const headers = {
+        'Authorization': 'Bearer '+ localStorage.getItem('key'),
+      };
+      axios.get(url + 'me', {headers})
       .then(response => {
-        const quote = response.data[0];
-        this.setState({id: quote.id, description: quote.description, firstName: quote.user.firstName, lastName: quote.user.lastName,
-          idUser: quote.user.id, upVote: quote.upVote, downVote: quote.downVote})
+        const quote = response.data;
+        setFirstName(quote.user.firstName);
+        setLastName(quote.user.lastName);
+        setDescription(quote.description);
+        setDownVote(quote.downVote);
+        setUpVote(quote.upVote);
+        
+      })
+     }else if(id != ""){
+              axios.get(url + 'users/'+id)
+      .then(response => {
+        const quote = response.data;
+        console.log(quote);
+        setFirstName(quote.user.firstName);
+        setLastName(quote.user.lastName);
+        setDescription(quote.description);
+        setDownVote(quote.downVote);
+        setUpVote(quote.upVote);
       })
   
-     }else{
+     } else{
       axios.get(url + 'list/random')
       .then(response => {
         const quote = response.data[0];
@@ -42,33 +55,28 @@ export default class RandomQuote
            idUser: quote.user.id, upVote: quote.upVote, downVote: quote.downVote})
       })
      }
-    
-  }
+    },[]);
 
-  subtract(upvotes, downvotes){
-    return upvotes-downvotes;
-  }
 
-  render() {
     return (
       <div className='random-mine-others-quote'>
             <div className='quote'>
               <div className='quote-container-left'>
-              <button className='vote-btn'><img src={arrow_up} alt="arrow up" onClick={this.upvote} /></button>
-              <p>{this.subtract(this.state.upVote, this.state.downVote)}</p>
-              <button className='vote-btn'><img src={arrow_down} alt="arrow down" onClick={this.downvote} /></button>
+              <button className='vote-btn'><img src={arrow_up} alt="arrow up"  /></button>
+              <p>{upVote-downVote}</p>
+              <button className='vote-btn'><img src={arrow_down} alt="arrow down"  /></button>
               </div>
               <div className='quote-container-right'>
-                <p>{this.state.description}</p>
+                <p>{description}</p>
                 <div className='user-display'>
                   <img src={profile_logo} alt="profile logo"></img>
-                    <Link to={'/profile/'+this.state.idUser}>
-                      <p>{this.state.firstName + " " + this.idUser}</p>
+                    <Link to={'/profile/'+id}>
+                      <p>{firstName + " " + lastName}</p>
                     </Link> 
                 </div>
               </div>
             </div>
     </div>
     )
-  }
+  
 }

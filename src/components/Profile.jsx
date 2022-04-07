@@ -9,20 +9,18 @@ import {
 import './components.css';
 import axios from 'axios';
 import { url } from '../globalVariables';
-
 import profile_logo from  './images/profile_picture.png';
+import NotFound from './NotFound';
 export default function Profile() {
-  
+
+
     const { id } = useParams();
-    const [login, setLogin] = useState(false);
     const [firstName, setFirstName] = useState("");
     const[lastName, setLastName] = useState("");
-    const [userId, setUserId] = useState("");
     const [karma, setKarma] = useState("");
-    const [random, setRandom] = useState(false);
+    const [login, setLogin] = useState("");
     useEffect(() => {
     const key = localStorage.getItem('key');
-    setUserId(id);
     if (key) {
       const dateNow = new Date();
       const decoded = jwtDecode(key);
@@ -33,6 +31,7 @@ export default function Profile() {
       }
     }
     if(window.location.pathname == '/me'){
+      
       const headers = {
         'Authorization': 'Bearer '+ localStorage.getItem('key'),
       };
@@ -41,28 +40,25 @@ export default function Profile() {
         setFirstName(userquote.user.firstName);
         setLastName(userquote.user.lastName);
         setKarma(userquote.upVote-userquote.downVote);
-        setUserId(userquote.user.id);
-        setRandom(false);
-        console.log("profileeee");
-        console.log(userquote);
-        console.log(userquote.user.id);
       });
 
 
 
     }else{
-      console.log(id+" iddd");
       axios.get(url + 'users/'+id).then((response) => {
         const userquote = response.data;
         setFirstName(userquote.user.firstName);
         setLastName(userquote.user.lastName);
         setKarma(userquote.upVote-userquote.downVote);
-        setUserId(userquote.user.id);
-        setRandom(false);
       });
     }
     
     },[]);
+    if(!login && window.location.pathname ==="/me"){
+      return (
+        <NotFound/>
+    );
+    }
     return (
       <div className='profile-background'>
         <Navbar></Navbar>
@@ -77,7 +73,7 @@ export default function Profile() {
           </div>
           <div className='quote-profile'>
             <h5>Quote</h5>
-            <RandomQuote Random = {random} userId = {userId}></RandomQuote>
+            <RandomQuote></RandomQuote>
           </div>
           <div className="likes-container">
             <h5>Likes</h5>

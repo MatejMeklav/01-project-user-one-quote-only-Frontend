@@ -4,6 +4,8 @@ import {
   } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import img from  './images/quotastic_logo.png';
+import profile_logo from  './images/profile_picture.png';
+import create_logo from  './images/create_logo.png';
 
 
 
@@ -124,7 +126,7 @@ export default class Navbar extends Component {
                   
                      <Link to="/me">
                      <button className='logged-in-navbar-btn-img'>
-                        <img className='profile-img' src="./profile_picture.png" alt="profile image"/>
+                        <img className='profile-img' src={profile_logo} alt="profile image"/>
                      </button>
                      </Link>
                 </li>
@@ -132,7 +134,7 @@ export default class Navbar extends Component {
                   
                     <Link to="/create">
                     <button className='logged-in-navbar-btn-img'>
-                        <img src="./create_logo.png" alt="create logo"/>
+                        <img src={create_logo} alt="create logo"/>
                     </button>
                      </Link>
                 </li>
