@@ -4,6 +4,7 @@ import {
   } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import img from  './images/quotastic_logo.png';
+import img2 from  './images/quotastic_logo_white.png';
 import profile_logo from  './images/profile_picture.png';
 import create_logo from  './images/create_logo.png';
 

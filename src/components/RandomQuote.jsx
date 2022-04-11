@@ -35,7 +35,7 @@ export default function RandomQuote() {
         setUpVote(quote.upVote);
         
       })
-     }else if(id != ""){
+     }else if(id != undefined){
               axios.get(url + 'users/'+id)
       .then(response => {
         const quote = response.data;
@@ -51,8 +51,11 @@ export default function RandomQuote() {
       axios.get(url + 'list/random')
       .then(response => {
         const quote = response.data[0];
-        this.setState({id: quote.id, description: quote.description, firstName: quote.user.firstName, lastName: quote.user.lastName,
-           idUser: quote.user.id, upVote: quote.upVote, downVote: quote.downVote})
+        setFirstName(quote.user.firstName);
+        setLastName(quote.user.lastName);
+        setDescription(quote.description);
+        setDownVote(quote.downVote);
+        setUpVote(quote.upVote);
       })
      }
     },[]);

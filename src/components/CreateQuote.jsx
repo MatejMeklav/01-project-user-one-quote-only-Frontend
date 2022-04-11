@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {url} from '../globalVariables';
 import axios from 'axios';
+import './mobile.css';
 
 export default class CreateQuote extends Component {
   constructor(props) {

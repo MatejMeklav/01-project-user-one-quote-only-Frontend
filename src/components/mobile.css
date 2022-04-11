@@ -1,0 +1,73 @@
+/* CREATE QUOTE  */
+@media only screen and (max-width: 600px) {
+    .create-quote-container {
+      justify-content: space-between;
+      min-width: 82%;
+      margin: 32px;
+      height: 383px;
+    }
+
+    .create-quote-container p {
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
+   
+    .form-container-create .textarea {
+        height: 124px;
+        width: 280px;
+        margin-top: 32px;
+        padding: 16px 24px 51px 24px;
+
+    }
+    .form-container-create {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+    .form-container-create .buttons-submit-cancel{
+        justify-content: flex-start;
+        height: 40px;
+        margin-top: 32px;
+
+        
+    }
+    .form-container-create .buttons-submit-cancel .sign-up-form-btn {
+        padding: 0 0;
+        margin: 0 20px 0 0;
+        width: 137px;
+        height: 40px;
+    }
+    
+
+}
+
+  @media only screen and (max-width: 1500px) {
+      .settings-container{
+          max-width: 45%;
+      }
+      .settings-container .name-container {
+          justify-content: space-between;
+      }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .settings-container{
+        max-width: 60%;
+    }
+    .settings-container .name-container {
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .settings-container{
+        margin: 32px;
+        min-width: 85%;
+    }
+
+    .settings-container .name-container {
+        justify-content: space-between;
+    }
+}
