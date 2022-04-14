@@ -66,9 +66,7 @@ export default class Home extends Component {
             <nav id='bottom-nav'>
               <Link className='login-btn' to='/signup'>Sign up to see more</Link>
             </nav>
-            <footer>
-              <img src="footer.png" alt="footer"/>
-            </footer>
+            <Footer></Footer>
 
           </nav>
         );

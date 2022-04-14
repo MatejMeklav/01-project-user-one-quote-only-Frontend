@@ -11,6 +11,8 @@ import axios from 'axios';
 import { url } from '../globalVariables';
 import profile_logo from  './images/profile_picture.png';
 import NotFound from './NotFound';
+import Footer from './Footer';
+
 export default function Profile() {
 
 
@@ -85,6 +87,7 @@ export default function Profile() {
             Load more
           </Link>
         </nav>
+        <Footer></Footer>
       </div>
     );
 }

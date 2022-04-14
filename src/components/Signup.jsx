@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import { url } from '../globalVariables';
 import axios from 'axios';
 import './components.css';
+import Footer from './Footer';
 export default class Signup extends Component {
   constructor(props) {
     super(props);
@@ -114,11 +115,7 @@ export default class Signup extends Component {
           </nav>
         </form>
         </nav>
-        <footer>
-          <img src="footer.png" alt="footer" />
-        </footer>
-        
-        
+        <Footer></Footer> 
       </>
     );
   }

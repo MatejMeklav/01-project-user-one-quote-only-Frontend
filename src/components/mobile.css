@@ -238,6 +238,12 @@
 }
 
 /* SIGNUP */
+
+@media only screen and (max-width: 1300px) {
+    .form-container-two .name-container .sign-up-form-input {
+        width: 30%;
+    }
+}
 @media only screen and (max-width: 700px) {
         .form-container-two {
             width: 349px;

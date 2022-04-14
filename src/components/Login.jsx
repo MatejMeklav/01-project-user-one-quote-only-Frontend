@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import './components.css';
 import axios from 'axios';
 import { url } from '../globalVariables';
+import Footer from './Footer';
 
 export default class Login extends Component {
   constructor(props) {
@@ -48,6 +49,7 @@ export default class Login extends Component {
       )
     }
     return (
+      <>
       <nav className="content">
         <Navbar></Navbar>
         <nav className="form-container">
@@ -81,10 +83,10 @@ export default class Login extends Component {
             <button className="login-form-btn">Login</button>
           </form>
         </nav>
-        <footer>
-          <img src="footer.png" alt="footer" />
-        </footer>
       </nav>
+      <Footer></Footer>  
+      </>
+      
     );
   }
 }
