@@ -43,6 +43,8 @@
 
 }
 
+/*PROFILE SETTINGS*/
+
   @media only screen and (max-width: 1500px) {
       .settings-container{
           max-width: 45%;
@@ -67,7 +69,232 @@
         min-width: 85%;
     }
 
-    .settings-container .name-container {
-        justify-content: space-between;
+    
+    .settings-container .name-container .sign-up-form-input{
+        max-width: 10%;
+        width: 132px;
     }
+    .settings-container p {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .settings-container .buttons-submit-cancel{
+        justify-content: flex-start;
+        height: 40px;
+        margin-top: 32px;
+
+        
+    }
+    .settings-container .buttons-submit-cancel .sign-up-form-btn {
+        padding: 0 0;
+        margin: 0 20px 0 0;
+        width: 137px;
+        height: 40px;
+    }
+}
+
+
+/*HOME*/
+
+@media only screen and (max-width: 700px) {
+
+    .upper-container-home {
+        flex-direction: column;
+    }
+
+    .welcome-text-container h1 {
+        font-size: 35px;
+        line-height: 41px;
+        letter-spacing: 0.25px;
+    }
+    .welcome-text-container h5 {
+        font-size: 24px;
+        line-height: 28px;
+        margin-top: 18px;
+        margin-bottom: 42px;
+    }
+
+    .welcome-text-container {
+        margin: 55px 35px 81px 35px;
+    }
+
+    .image-container {
+        position: relative;
+        width: 344px;
+        height: 349px;
+        left: 35px;
+        margin-right: 0;
+    }
+
+    #image-mid {
+      width: 360px;
+      left:0px;
+    }
+
+    #image-top {
+        width: 95%;
+        left:12px;
+        top: 25px;
+    }
+    
+    #image-bottom {
+        width: 315px;
+        margin-top: 60px;
+        margin-left: 10px;
+    }
+
+    #fantastic-quotes-text h2 {
+        font-size: 35px;
+        line-height: 41px;
+        text-align: center;
+        letter-spacing: 0.25px;
+    }
+    #fantastic-quotes-text {
+        max-width: 100%;
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+
+    .home-background {
+        background: none;
+    }
+
+    .home-background .quotes-headline h4 {
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+    }
+
+    .home-background .quotes-text {
+        max-width: 100%;
+    }
+    .home-background .quotes-text p {
+        max-width: 100%;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+
+    .quotes-list-grid {
+        flex-direction: column;
+        margin-top: 35px;
+    }
+    .quotes-list-grid .grid-element {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #bottom-nav {
+        margin-bottom: 50%;
+    }
+
+    .home-background footer img {
+        height: 65px;
+    }
+}
+/* NAVBAR */
+@media only screen and (max-width: 700px) {
+    .navbar .login-btn {
+        visibility: hidden;
+    }
+    .navbar .sign-up-btn {
+        visibility: hidden;
+        
+    }
+
+    .navbar {
+        flex-direction: row-reverse;
+        height: 96px;
+        padding: 0;
+        max-width: 100%;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar #hamburger {
+        visibility: visible;
+        padding: 2px 1px;
+        width: 23.17px;
+        height: 21.83px;
+        margin: 25px 0 40px 10px;
+    }
+
+    #hamburger-signup {
+        visibility: visible;
+        padding: 2px 1px;
+        width: 23.17px;
+        height: 21.83px;
+        margin: 25px 0 40px 10px;
+    }
+   
+
+    .navbar #logo {
+        width: 131.76px;
+        height: 25.5px;
+        padding: 1px 8px;
+        margin: 35px 30px 35px 30px;
+    }
+    
+}
+
+/* SIGNUP */
+@media only screen and (max-width: 700px) {
+        .form-container-two {
+            width: 349px;
+            height: 574px;
+            margin: 73px 33px 89px 32px;
+        }
+
+        .form-container-two .name-container .sign-up-form-input {
+            width: 166.5px;
+            height: 40px;
+        }
+
+
+        footer img {
+            width: 100%;
+            height: 65px;
+        }
+
+        .form-container-two .lower-part p {
+            margin-top: 0px;
+        }
+        .form-container-two .lower-part button {
+            margin-bottom: 15px;
+        }
+
+        .form-container-two h1 {
+            font-size: 35px;
+            line-height: 41px;
+        }
+        .form-container-two .lower-part{
+            margin-bottom: 156px;
+        }
+
+        .form-container-two .sign-up-form-btn {
+            width: 349px;
+            height: 40px;
+            margin: 22px 0px;
+        }
+
+        .form-container-two p {
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            padding-left: 1px;
+            padding-right: 2px;
+            margin-bottom: 16px;
+            margin-top: 8px;
+        }
+
+}
+
+
+/* Login */
+@media only screen and (max-width: 700px) {
+ .form-container {
+     max-width: 100%;
+     margin: 177px 33px 0 32px;
+     height: 351px;
+ }
 }

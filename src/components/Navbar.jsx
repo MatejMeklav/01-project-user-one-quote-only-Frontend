@@ -7,31 +7,26 @@ import img from  './images/quotastic_logo.png';
 import img2 from  './images/quotastic_logo_white.png';
 import profile_logo from  './images/profile_picture.png';
 import create_logo from  './images/create_logo.png';
-
+import mobile_menu from './images/clarity_menu-line.png';
 
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = {login: false};
+    this.state = {login: false}
   }
 
   componentDidMount() {
     const key = localStorage.getItem('key');
-    
         if(key){
             var dateNow = new Date();
             const decoded = jwtDecode(key);
-            console.log(decoded);
             if(decoded.exp * 1000 < dateNow.getTime()){
                 this.setState({login: false})
-                console.log("falsenavbar");
             }else {
                 this.setState({login: true})
-                console.log("truenavbar");
             }
         }
-    
   }
 
   render() {
@@ -41,7 +36,10 @@ export default class Navbar extends Component {
           return (
             <div className='navbar'>
               <img id='logo' src={img} alt="footer"/>
-                <ul>
+          <ul>
+            <li>
+            <img id='hamburger' src={mobile_menu} alt="hamburger"/>
+            </li>
             <li>
              <Link to="/signup">
                 <button type="button" className='sign-up-btn'>Sign up</button>
@@ -55,6 +53,9 @@ export default class Navbar extends Component {
             <div className='navbar'>
               <img id='logo' src={img} alt="footer"/>
             <ul>
+            <li>
+            <img id='hamburger-signup' src={mobile_menu} alt="hamburger"/>
+            </li>
                 <li>
                     <Link to="/login">
                         <button className='login-btn' type="button">Login</button>
