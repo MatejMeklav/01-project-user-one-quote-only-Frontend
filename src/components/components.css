@@ -223,9 +223,12 @@ ul {
   line-height: 19px;
 }
 
-.lower-part button {
+.lower-part a  {
   background-color: #ffffff;
   border: none;
+  display: flex;
+  line-height: 19px;
+  padding-bottom: 30px;
   color: #efb467;
 }
 

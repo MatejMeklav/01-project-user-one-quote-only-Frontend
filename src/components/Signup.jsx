@@ -4,6 +4,9 @@ import { url } from '../globalVariables';
 import axios from 'axios';
 import './components.css';
 import Footer from './Footer';
+import {
+  Link
+} from 'react-router-dom';
 export default class Signup extends Component {
   constructor(props) {
     super(props);
@@ -109,11 +112,14 @@ export default class Signup extends Component {
             />
           
           <button className="sign-up-form-btn">Sign up</button>
-          <nav className='lower-part'>
-           <p>Already have an account?</p>
-           <button>Sign in</button>
-          </nav>
         </form>
+        <nav className='lower-part'>
+           <p>Already have an account?</p>
+          <Link to = '/login'>
+          Sign in
+          </Link>
+           
+        </nav>
         </nav>
         <Footer></Footer> 
       </>
