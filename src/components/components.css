@@ -671,6 +671,10 @@ a {
   color:#DE8667;
 }
 
+#mid-nav {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 
 
 #bottom-nav button {
@@ -678,4 +682,11 @@ a {
   border: none;
   color: #de8667;
   font-size: 16px;
+}
+
+#hamburger-exclude{
+  position: absolute;
+  width: 0;
+  height: 0;
+  visibility: hidden;
 }

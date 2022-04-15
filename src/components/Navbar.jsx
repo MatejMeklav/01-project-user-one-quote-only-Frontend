@@ -114,28 +114,29 @@ export default class Navbar extends Component {
 
     }else if (this.state.login == true){
           return(
-            <div className='navbar'>
-
+            <div className='navbar-logged-in'>
+              <img id='hamburger-exclude' src={mobile_menu} alt="hamburger"/>
               <img id='logo' src={img} alt="logo"/>
+              
             <ul className='navbar-li-logged-in'>
             
-                <li>
-                    <Link to="/home">
+                <li className='exclude'>
+                    <Link className='exclude' to="/home">
                       <button type="button" className='logged-in-navbar-btn'>Home</button>
                     </Link>
                 </li>
-                <li>
-                    <Link to="/settings">
+                <li className='exclude'>
+                    <Link className='exclude' to="/settings">
                       <button type="button" className='logged-in-navbar-btn'>Settings</button>
                     </Link>
                 </li>
                 <li>
                       <button type="button" className='logged-in-navbar-btn'>Logout</button>
                 </li>
-                <li>
+                <li className='exclude'>
                   
-                     <Link to="/me">
-                     <button className='logged-in-navbar-btn-img'>
+                     <Link className='exclude' to="/me">
+                     <button className='logged-in-navbar-btn-create'>
                         <img className='profile-img' src={profile_logo} alt="profile image"/>
                      </button>
                      </Link>

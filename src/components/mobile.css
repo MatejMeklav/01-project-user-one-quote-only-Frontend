@@ -269,6 +269,36 @@
     #home-ul-container li {
         max-width: 60px;
     }
+
+    #hamburger-exclude {
+        visibility: visible;
+        padding: 2px 1px;
+        width: 23.17px;
+        height: 21.83px;
+    }
+
+    .navbar-logged-in .logged-in-navbar-btn,.logged-in-navbar-btn-create{
+        position: absolute;
+        width: 0;
+        height: 0;
+        visibility:hidden;
+    }
+
+    .navbar-logged-in {
+        flex-direction: row;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+        max-width: 100%;
+    }
+
+
+
+    .exclude {
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+
+
     
 }
 
