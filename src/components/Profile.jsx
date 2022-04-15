@@ -84,7 +84,7 @@ export default function Profile() {
         </div>
         <nav id="bottom-nav">
           <Link className="login-btn" to="/#">
-          <button>Sign in</button>
+          <button>Load more</button>
           </Link>
         </nav>
         <Footer></Footer>

@@ -670,3 +670,12 @@ a {
 .colored-text {
   color:#DE8667;
 }
+
+
+
+#bottom-nav button {
+  background: none;
+  border: none;
+  color: #de8667;
+  font-size: 16px;
+}

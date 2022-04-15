@@ -187,10 +187,41 @@
 
     #bottom-nav {
         margin-bottom: 50%;
+        margin-top: 32px;
     }
 
     .home-background footer img {
         height: 65px;
+    }
+}
+/* HOME LOGGED-IN */
+@media only screen and (max-width: 600px) {
+    .home-background .headline-paragraph-container #paragraph {
+        margin-bottom: 32px;
+    }
+
+    .home-background .headline-paragraph-container {
+        margin-bottom: 64px;
+    }
+
+    .home-background .headline-paragraph-container .random-mine-others-quote{
+        max-width: 100%;
+    }
+
+    .home-background .headline-paragraph-container .random-mine-others-quote .quote {
+        min-width: 344px;
+        margin-left: 35px;
+        margin-right: 35px;
+        margin-bottom: 0;
+    }
+
+    .home-background .quotes-text {
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
+    .home-background #mid-nav {
+        margin-bottom: 69px;
+        margin-top: 32px;
     }
 }
 /* NAVBAR */
@@ -233,6 +264,10 @@
         height: 25.5px;
         padding: 1px 8px;
         margin: 35px 30px 35px 30px;
+    }
+
+    #home-ul-container li {
+        max-width: 60px;
     }
     
 }
@@ -312,3 +347,72 @@
     }
 }
 
+/*PROFILE */
+
+
+@media only screen and (max-width: 500px) {
+    .profile-background {
+        background-image: none;
+    }
+    .profile-background .profile-container {
+        background-image: url('/public/background_profile_top_mobile.png');
+        margin-top: 0;
+        background-size: 414px 277px;
+        background-repeat: no-repeat;
+
+    }
+
+    .profile-background .logo-name-container {
+        max-width: 80%;
+    }
+
+    .profile-background .logo-name-container img{
+        margin-top: 56px;
+        margin-bottom: 20px;
+    }
+    .profile-background .logo-name-container h4{
+        width: 222px;
+        margin: 0 auto 22px auto;
+
+    }
+
+    .profile-background .quotastic-karma-container {
+        margin: 0 107px 40px 107px;
+        max-width: 100%;
+
+    }
+    .profile-background .quote-profile{
+        max-width: 100%;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+    .profile-background .quote-profile h5{
+        text-align: left;
+
+    }
+
+    .profile-background .quote-profile .random-mine-others-quote{
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .profile-background .quote-profile .random-mine-others-quote .quote{
+        min-width: 100%;
+    }
+
+    .profile-background .likes-container h5 {
+        margin-left: 35px;
+        margin-right: 35px;
+        text-align: left;
+        font-size: 24px;
+        font-weight: 400;
+        color:#DE8667;
+        line-height: 28px;
+    }
+
+    .profile-background .quotes-list-grid{
+        margin-top: 24px;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+}

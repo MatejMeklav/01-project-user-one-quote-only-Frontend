@@ -69,7 +69,10 @@ export default class Navbar extends Component {
           return(
             <div className='navbar'>
               <img id='logo' src={img} alt="footer"/>
-            <ul>
+            <ul id= "home-ul-container">
+            <li>
+            <img id='hamburger' src={mobile_menu} alt="hamburger"/>
+            </li>
                 <li>
                     <Link to="/signup">
                       <button type="button" className='sign-up-btn'>Sign up</button>
@@ -89,6 +92,9 @@ export default class Navbar extends Component {
               <div className='navbar'>
                 <img id='logo' src={img} alt="footer"/>
               <ul>
+                <li>
+                <img id='hamburger' src={mobile_menu} alt="hamburger"/>
+                </li>
                   <li>
                       <Link to="/signup">
                         <button type="button" className='sign-up-btn'>Sign up</button>
@@ -108,9 +114,11 @@ export default class Navbar extends Component {
 
     }else if (this.state.login == true){
           return(
-            <div className='navbar-logged-in'>
+            <div className='navbar'>
+
               <img id='logo' src={img} alt="logo"/>
             <ul className='navbar-li-logged-in'>
+            
                 <li>
                     <Link to="/home">
                       <button type="button" className='logged-in-navbar-btn'>Home</button>

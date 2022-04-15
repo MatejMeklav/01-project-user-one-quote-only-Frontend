@@ -86,7 +86,7 @@ export default class Home extends Component {
               <p>Most upvoted quotes on the platform. Give a like to the ones you like to keep them saved in your profile.</p>
             </nav>
             <Quotes type = {true}></Quotes>
-            <nav id='bottom-nav'>
+            <nav id='mid-nav' >
               <Link className='login-btn' to='/#'>Load more</Link>
             </nav>
 
