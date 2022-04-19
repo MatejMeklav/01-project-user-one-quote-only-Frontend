@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Navbar from './Navbar';
 import './components.css';
 import {
   Link,
@@ -8,6 +7,7 @@ import Quotes from './Quotes';
 import jwtDecode from 'jwt-decode';
 import RandomQuote from './RandomQuote';
 import Footer from './Footer';
+import NavBar from './NavBar';
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +38,7 @@ export default class Home extends Component {
       case false:
         return (
           <nav className='home-background'>
-            <Navbar></Navbar>
+          <NavBar></NavBar>
             <nav className='upper-container-home'>
               <nav className='welcome-text-container'>
                 <h1>Welcome<br></br> to <span className='colored-text'>Quotastic</span></h1>
@@ -73,7 +73,7 @@ export default class Home extends Component {
       case true:
         return (
           <nav className='home-background'>
-            <Navbar login = {this.state.login}></Navbar>
+            <NavBar></NavBar>
             <nav className='headline-paragraph-container'>
               <h4>Quote of the day</h4>
               <p id='paragraph'>Quote of the day is randomly choosen quote.</p>

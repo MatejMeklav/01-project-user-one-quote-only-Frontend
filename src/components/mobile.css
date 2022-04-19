@@ -224,83 +224,6 @@
         margin-top: 32px;
     }
 }
-/* NAVBAR */
-@media only screen and (max-width: 600px) {
-    .navbar .login-btn {
-        visibility: hidden;
-    }
-    .navbar .sign-up-btn {
-        visibility: hidden;
-        
-    }
-
-    .navbar {
-        flex-direction: row-reverse;
-        height: 96px;
-        padding: 0;
-        max-width: 100%;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .navbar #hamburger {
-        visibility: visible;
-        padding: 2px 1px;
-        width: 23.17px;
-        height: 21.83px;
-        margin: 25px 0 40px 10px;
-    }
-
-    #hamburger-signup {
-        visibility: visible;
-        padding: 2px 1px;
-        width: 23.17px;
-        height: 21.83px;
-        margin: 25px 0 40px 10px;
-    }
-   
-
-    .navbar #logo {
-        width: 131.76px;
-        height: 25.5px;
-        padding: 1px 8px;
-        margin: 35px 30px 35px 30px;
-    }
-
-    #home-ul-container li {
-        max-width: 60px;
-    }
-
-    #hamburger-exclude {
-        visibility: visible;
-        padding: 2px 1px;
-        width: 23.17px;
-        height: 21.83px;
-    }
-
-    .navbar-logged-in .logged-in-navbar-btn,.logged-in-navbar-btn-create{
-        position: absolute;
-        width: 0;
-        height: 0;
-        visibility:hidden;
-    }
-
-    .navbar-logged-in {
-        flex-direction: row;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
-        max-width: 100%;
-    }
-
-
-
-    .exclude {
-        position: absolute;
-        width: 0;
-        height: 0;
-    }
-
-
-    
-}
 
 /* SIGNUP */
 
@@ -371,9 +294,15 @@
 }
 
 @media only screen and (max-width: 500px) {
+
+
     .footer-component{
         background-image: url('/src/components/images/footer-mobile.png');
         height: 65px;
+        background-size: auto;
+        background-repeat: no-repeat;
+        min-width: 414px;
+        max-width: 414px;
     }
 }
 
@@ -446,3 +375,76 @@
         margin-right: 35px;
     }
 }
+
+
+@media only screen and (max-width: 500px) {
+    .mobile-navigation, .mobile-navigation-logged-in {
+            display:flex;
+            flex-direction: column;
+            min-height: 40%;
+            justify-content: space-between;
+            
+    }
+
+    .navigation, .navigation-logged-in {
+        display: none;
+    }
+
+    .navigation-bar {
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+        margin-left: 0;
+        margin-right: 0;
+        min-width: 100%;
+        padding-top: 7%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 7%;
+    }
+    
+    .mobile-navigation-logged-in .visible-part,
+    .mobile-navigation .visible-part{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mobile-navigation .visible-part {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    .mobile-navigation-logged-in .visible-part {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    .mobile-navigation-logged-in .visible-part .logo,
+    .mobile-navigation .visible-part .logo{
+        max-height: 24px;
+        width: 116px;
+        margin-top: 8px;
+    }
+
+    .mobile-navigation-logged-in .visible-part .create-simbol-mobile{
+            height: 25px;
+            width: 25px;
+            margin-top: 8px;
+    }
+
+    .mobile-navigation-logged-in .visible-part .hamburger,
+    .mobile-navigation .visible-part .hamburger{
+        margin-top: 12px;
+        width: 25px;
+        height: 25px;
+    }
+    .mobile-navigation-logged-in .visible-part .close,
+    .mobile-navigation .visible-part .close{
+        margin-top: 15px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .mobile-navigation-logged-in .invisible-part-logged-in {
+        margin-top: 5px;
+        text-align: left;
+    }
+}
+
+

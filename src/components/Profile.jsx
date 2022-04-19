@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import Quotes from './Quotes';
 import RandomQuote from './RandomQuote';
-import Navbar from './Navbar';
+import NavBar from './NavBar';
 import jwtDecode from 'jwt-decode';
 import {
     Link, useParams,
@@ -63,7 +63,7 @@ export default function Profile() {
     }
     return (
       <div className='profile-background'>
-        <Navbar></Navbar>
+        <NavBar></NavBar>
         <div className="profile-container">
           <div className='logo-name-container'>
             <img src={profile_logo} alt="profile logo"></img>

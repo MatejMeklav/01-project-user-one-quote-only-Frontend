@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
+import NavBar from './NavBar';
 import { url } from '../globalVariables';
 import axios from 'axios';
 import './components.css';
@@ -52,7 +52,7 @@ export default class Signup extends Component {
   render() {
     return (
       <>
-        <Navbar></Navbar>
+        <NavBar></NavBar>
         <nav className="form-container-two">
         <h1>What is your <span className='colored-text'>name?</span></h1>
         <p>

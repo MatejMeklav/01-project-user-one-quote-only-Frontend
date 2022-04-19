@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
+import NavBar from './NavBar';
 import './components.css';
 import axios from 'axios';
 import { url } from '../globalVariables';
@@ -49,9 +49,9 @@ export default class Login extends Component {
       )
     }
     return (
-      <>
+      <div className='login-page'>
       <nav className="content">
-        <Navbar></Navbar>
+        <NavBar></NavBar>
         <nav className="form-container">
           <nav className="upper-part">
             <h1>Welcome <span className='colored-text'>back!</span></h1>
@@ -85,7 +85,7 @@ export default class Login extends Component {
         </nav>
       </nav>
       <Footer></Footer>  
-      </>
+      </div>
       
     );
   }
