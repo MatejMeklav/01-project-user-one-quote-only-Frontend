@@ -459,6 +459,9 @@
         justify-content: flex-start;
     }
 
+    .mobile-navigation-logged-in .invisible-part-logged-in ul li #logout{
+        color: #DE8667;
+    }
     .mobile-navigation .invisible-part ul {
         margin-top: 35px;
         width: 90%

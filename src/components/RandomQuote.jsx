@@ -13,6 +13,7 @@ export default function RandomQuote() {
 
    const { id } = useParams();
    const [firstName, setFirstName] = useState("");
+   const [userId, setUserId] = useState("");
    const[lastName, setLastName] = useState("");
    const [description, setDescription] = useState("");
    const [upVote, setUpVote] = useState(0);
@@ -33,6 +34,7 @@ export default function RandomQuote() {
         setDescription(quote.description);
         setDownVote(quote.downVote);
         setUpVote(quote.upVote);
+        setUserId(quote.user.id);
         
       })
      }else if(id != undefined){
@@ -56,10 +58,16 @@ export default function RandomQuote() {
         setDescription(quote.description);
         setDownVote(quote.downVote);
         setUpVote(quote.upVote);
+        setUserId(quote.user.id);
       })
      }
     },[]);
-
+      let idCheck = ""
+      if(id === undefined){
+        idCheck = userId;
+      }else{
+        idCheck = id;
+      }
 
     return (
       <div className='random-mine-others-quote'>
@@ -73,7 +81,7 @@ export default function RandomQuote() {
                 <p>{description}</p>
                 <div className='user-display'>
                   <img src={profile_logo} alt="profile logo"></img>
-                    <Link to={'/profile/'+id}>
+                    <Link to={'/profile/'+idCheck}>
                       <p>{firstName + " " + lastName}</p>
                     </Link> 
                 </div>
