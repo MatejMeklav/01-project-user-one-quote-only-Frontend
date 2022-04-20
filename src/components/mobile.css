@@ -445,6 +445,80 @@
         margin-top: 5px;
         text-align: left;
     }
+
+    .mobile-navigation .invisible-part ul li,
+    .mobile-navigation-logged-in .invisible-part-logged-in ul li {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .mobile-navigation-logged-in .invisible-part-logged-in ul li img{
+        width: 60%;
+    }
+    .mobile-navigation-logged-in .invisible-part-logged-in ul #profile-name{
+        justify-content: flex-start;
+    }
+
+    .mobile-navigation .invisible-part ul {
+        margin-top: 35px;
+        width: 90%
+    }
+
+    .mobile-navigation .invisible-part ul #link-arrow,
+    .mobile-navigation-logged-in .invisible-part-logged-in ul li {
+        margin-bottom: 35px;
+    }
+
+    .mobile-navigation .invisible-part ul #link-arrow a{
+        line-height: 28px;
+        font-weight: 400;
+        font-size: 24px;
+    }
+
+    .mobile-navigation-logged-in .invisible-part-logged-in ul li #link-arrow {
+        min-width: 15px;
+    }
+
+    .mobile-navigation-logged-in .invisible-part-logged-in ul {
+        margin-right: 12px;
+    }
+
+    .mobile-navigation-logged-in .invisible-part-logged-in ul li a{
+        line-height: 28px;
+        font-weight: 400;
+        font-size: 24px;
+    }
+    .mobile-navigation-logged-in .invisible-part-logged-in ul li #name-tag{
+        margin-top: 10px;
+    }
+
+    .mobile-navigation-logged-in .invisible-part-logged-in ul li{
+        margin-top: 9px;
+        margin-left: 6px;
+    }
+
+    .mobile-navigation .invisible-part ul #buttons-login,
+    .mobile-navigation .invisible-part ul #buttons-sign-up{
+        width: 96%;
+        margin-bottom: 16px;
+        
+    }
+
+    .mobile-navigation .invisible-part ul #buttons-login a,
+    .mobile-navigation .invisible-part ul #buttons-sign-up a{
+        text-align: center;
+        width: 100%;
+        text-decoration: none;
+    }
+
+    .mobile-navigation .invisible-part ul #buttons-login a{
+        color: #DE8667;
+    }
+
+    .mobile-navigation .invisible-part ul #buttons-sign-up a {
+        color: #ffff;
+    }
+
 }
 
 

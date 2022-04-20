@@ -35,10 +35,10 @@ const MobileNavigation = () => {
             <div className="mobile-navigation-logged-in">
                 <div className="visible-part" >
                  {open ? closeIcon : hamburgerIcon}
-                <img className="logo" src={logo} ></img>
-                <Link to='/create'>
-                    <AiOutlinePlus className='create-simbol-mobile' size='25px' color='#EFB467' ></AiOutlinePlus>
-                </Link>
+                 {!open ? <><img className="logo" src={logo}></img><Link to='/create'>
+                        <AiOutlinePlus className='create-simbol-mobile' size='25px' color='#EFB467'></AiOutlinePlus>
+                    </Link></> : ""}
+                
                 </div>
                 
                 {open && <NavLinksMobileLoggedIn></NavLinksMobileLoggedIn> }
@@ -50,7 +50,7 @@ const MobileNavigation = () => {
             <div className="mobile-navigation">
                 <div className="visible-part" >
                 {open ? closeIcon : hamburgerIcon}
-                <img className="logo" src={logo} ></img>
+                {!open ? <img className="logo" src={logo} ></img> :""}
                 </div>
                 
                 {open && <NavLinksMobile></NavLinksMobile> }

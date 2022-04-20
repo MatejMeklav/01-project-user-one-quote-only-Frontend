@@ -24,11 +24,11 @@ const NavLinksMobileLoggedIn = () => {
     return (
         <div className='invisible-part-logged-in'>
             <ul>
-                <li>
+                <li id='profile-name'>
                   <Link to = "/me">
                         <img src={logo_profile}></img> 
                   </Link>
-                  <Link to = "/me">
+                  <Link id='name-tag' to = "/me">
                         {firstName} {lastName}
                   </Link>
                   
@@ -37,7 +37,7 @@ const NavLinksMobileLoggedIn = () => {
                   <Link to = "/home">
                      Home
                   </Link>
-                  <Link to = "/home">
+                  <Link id='link-arrow'  to = "/home">
                     <img src={arrow}></img>
                   </Link>
                 </li>
@@ -45,7 +45,7 @@ const NavLinksMobileLoggedIn = () => {
                   <Link to = "/settings">
                      Settings
                   </Link>
-                  <Link to = "/settings">
+                  <Link id='link-arrow'  to = "/settings">
                     <img src={arrow}></img>
                   </Link>
                 </li>
@@ -53,7 +53,7 @@ const NavLinksMobileLoggedIn = () => {
                   <Link to = "/logout">
                      Logout
                   </Link>
-                  <Link to = "/logout">
+                  <Link id='link-arrow'  to = "/logout">
                     <img src={arrow}></img>
                   </Link>
                 </li>

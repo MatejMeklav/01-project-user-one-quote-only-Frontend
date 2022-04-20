@@ -7,7 +7,7 @@ const NavLinksMobile = () => {
     return (
         <div className='invisible-part'>
             <ul>
-                <li>
+                <li id='link-arrow'>
                   <Link to = "/home">
                      Home
                   </Link>
@@ -16,20 +16,14 @@ const NavLinksMobile = () => {
                   </Link>
                   
                 </li>
-                <li>
+                <li className='sign-up-btn' id='buttons-sign-up'>
                   <Link to = "/signup">
                      Sign up
                   </Link>
-                  <Link to = "/signup">
-                    <img src={arrow}></img>
-                  </Link>
                 </li>
-                <li>
+                <li className='login-btn' id='buttons-login'>
                   <Link to = "/login">
                      Login
-                  </Link>
-                  <Link to = "/login">
-                    <img src={arrow}></img>
                   </Link>
                 </li>
             </ul>
