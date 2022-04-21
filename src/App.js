@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Settings from './components/Settings';
 import CreateQuote from './components/CreateQuote';
 import Profile from './components/Profile';
+import Logout from './components/Logout';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                 <Route exact path='/create' element={< CreateQuote />}></Route>
                 <Route exact path='/me' element={< Profile />}></Route>
                 <Route exact path='/profile/:id' element={< Profile />}></Route>
+                <Route exact path='/logout' element={< Logout />}></Route>
           </Routes>
       </div>
     </Router>

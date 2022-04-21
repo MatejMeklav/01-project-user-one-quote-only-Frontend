@@ -20,7 +20,7 @@ const NavLinksLoggedIn = () => {
                   </Link>
                 </li>
                 <li id='padding-navbar'>
-                  <Link to = "/logout">
+                  <Link onClick={localStorage.removeItem("key")} to = "/logout">
                      Logout
                   </Link>
                 </li>

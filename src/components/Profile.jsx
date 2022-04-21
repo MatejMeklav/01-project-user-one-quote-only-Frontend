@@ -37,6 +37,7 @@ export default function Profile() {
       const headers = {
         'Authorization': 'Bearer '+ localStorage.getItem('key'),
       };
+      console.log(headers);
       axios.get(url + 'me',{headers}).then((response) => {
         const userquote = response.data;
         setFirstName(userquote.user.firstName);
