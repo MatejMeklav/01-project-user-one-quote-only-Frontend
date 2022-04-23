@@ -50,7 +50,7 @@ const NavLinksMobileLoggedIn = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link id='logout' onClick={localStorage.removeItem("key")} to = "/logout">
+                  <Link id='logout' to = "/logout">
                      Logout
                   </Link>
                   <Link id='link-arrow'  to = "/logout">

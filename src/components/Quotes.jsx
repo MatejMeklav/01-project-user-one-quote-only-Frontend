@@ -9,19 +9,29 @@ import arrow_up_orange from  './images/arrow_up_orange.png';
 import arrow_down from  './images/arrow_down.png';
 import profile_logo from  './images/profile_picture.png';
 import arrow_down_orange from  './images/arrow_down_orange.png';
+import jwtDecode from 'jwt-decode';
 
 export default function Quotes(props) {
 
   
   const [quotes, setQuotes] = useState();
   const [userId, setUserId] = useState();
+  const [likedState, setLikedState] = useState("");
+
 
   useEffect(() => {
+
+    console.log(props.number);
     
     if (props.type === true) {
       axios.get(url + 'list').then((response) => {
         const quotes = response.data;
-        setQuotes(quotes);
+        if(window.innerWidth < 500){
+          setQuotes(quotes.slice(0, 4*props.number));
+        }else{
+          setQuotes(quotes.slice(0, props.number*9));
+        }
+
       });
 
       console.log('MOST UPVOTED QUOTES');
@@ -29,7 +39,11 @@ export default function Quotes(props) {
       axios.get(url + 'list/Date').then((response) => {
         const quotes = response.data;
         quotes.liked = true;
-        setQuotes(quotes);
+        if(window.innerWidth < 500){
+          setQuotes(quotes.slice(0, 4*props.number));
+        }else{
+          setQuotes(quotes.slice(0, props.number*9));
+        }
     });
   }
 
@@ -41,7 +55,7 @@ export default function Quotes(props) {
     if (decoded.exp * 1000 < dateNow.getTime()) {
       setUserId("empty");
     }else{
-      console.log(userId);
+      setUserId(decoded.sub);
     }
   }
   },[]);
@@ -70,7 +84,7 @@ export default function Quotes(props) {
                 }
               />
             </button>
-            <p>{subtract(quote.upVote, quote.downVote)}</p>
+            <p id='likes-id'>{subtract(quote.upVote, quote.downVote)}</p>
             <button className="vote-btn">
               <img
                  src = {quote.usersDownVoted.some(user => user.id === userId) ? arrow_down_orange : arrow_down}

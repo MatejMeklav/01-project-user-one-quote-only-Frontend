@@ -535,6 +535,11 @@ a {
 .profile-container {
   margin-top: 7%;
 }
+
+#likes-id {
+  line-height: 17px;
+  font-size: 18px;
+}
 .likes-container h5 {
   max-width: 80%;
   margin: auto;

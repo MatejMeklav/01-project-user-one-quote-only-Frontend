@@ -25,8 +25,6 @@ export default function RandomQuote() {
    const [usersUpVotes, setUsersUpVotes] = useState();
    const [usersDownVotes, setUsersDownVotes] = useState();
 
-
-
    useEffect(() => {
 
     if(window.location.pathname == '/me'){
@@ -45,6 +43,17 @@ export default function RandomQuote() {
         setUserId(quote.user.id);
         setUsersDownVotes(quote.usersDownVoted);
         setUsersUpVotes(quote.usersUpVoted);
+        const key = localStorage.getItem('key');
+        console.log(key);
+        if (key) {
+          const dateNow = new Date();
+          const decoded = jwtDecode(key);
+          if (decoded.exp * 1000 < dateNow.getTime()) {
+            setUserId("empty");
+          }else{
+            setUserId(decoded.sub);
+          }
+        }
         
       })
      }else if(id != undefined){
@@ -61,6 +70,18 @@ export default function RandomQuote() {
         setUsersUpVotes(quote.usersUpVoted);
         setQuoteId(quote.id);
         setUserId(quote.user.id);
+        console.log(quote.user.id);
+        const key = localStorage.getItem('key');
+        console.log(key);
+        if (key) {
+          const dateNow = new Date();
+          const decoded = jwtDecode(key);
+          if (decoded.exp * 1000 < dateNow.getTime()) {
+            setUserId("empty");
+          }else{
+            setUserId(decoded.sub);
+          }
+        }
       })
   
      } else{
@@ -77,20 +98,21 @@ export default function RandomQuote() {
         setUsersUpVotes(quote.usersUpVoted);
         setQuoteId(quote.id);
         setUserId(quote.user.id);
-      })
+        const key = localStorage.getItem('key');
+        console.log(key);
+        if (key) {
+          const dateNow = new Date();
+          const decoded = jwtDecode(key);
+          if (decoded.exp * 1000 < dateNow.getTime()) {
+            setUserId("empty");
+          }else{
+            setUserId(decoded.sub);
+          }
+        }
+      });
     }
 
-    const key = localStorage.getItem('key');
-    console.log(key);
-    if (key) {
-      const dateNow = new Date();
-      const decoded = jwtDecode(key);
-      if (decoded.exp * 1000 < dateNow.getTime()) {
-        setUserId("empty");
-      }else{
-        console.log(userId);
-      }
-    }
+    
     },[]);
       let idCheck = ""
       if(id === undefined){
@@ -124,7 +146,7 @@ export default function RandomQuote() {
                   } 
                 />
                 </button>
-              <p>{upVote-downVote}</p>
+              <p id='likes-id'>{upVote-downVote}</p>
               <button className='vote-btn'>
                 <img 
                   src = {usersDownVotes?.some((user) => user.id === userId) ? arrow_down_orange : arrow_down} 
