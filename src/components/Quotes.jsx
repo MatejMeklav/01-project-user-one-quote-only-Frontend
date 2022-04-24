@@ -16,7 +16,6 @@ export default function Quotes(props) {
   
   const [quotes, setQuotes] = useState();
   const [userId, setUserId] = useState();
-  const [likedState, setLikedState] = useState("");
 
 
   useEffect(() => {
