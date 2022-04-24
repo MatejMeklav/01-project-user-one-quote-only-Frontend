@@ -5,5 +5,5 @@ Quotastic is social media platform to share your own quotes. You can create your
 ## Start app
 npm run start
 
-**App wont work without server and database! **
-**Server app is in repository 01-project-user-one-quote-only-Backend **
+App wont work without server and database! 
+Server app is in repository 01-project-user-one-quote-only-Backend 
